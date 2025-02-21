@@ -80,6 +80,18 @@ namespace PuzzleLabyrinth.Utils
                 new Room("", "", "") 
 
             };
+                case "Мультики":
+                    return new List<Room>
+                    {
+                        new Room("Какой породы рыбка Немо", "Красножаберник", "Рыба клоун")
+                    };
+
+                case "Игры":
+                    return new List<Room>
+                    {
+                        new Room("Самая продаваемая игра в мире?", "Tetris", "Minecraft")
+                    };
+
                 default:
                     return new List<Room>();
             }
