@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using System.Windows.Controls;
 using PuzzleLabyrinth.Utils;
 
@@ -23,7 +24,7 @@ namespace PuzzleLabyrinth
                 QuestionText.Text = currentRoom.Question;
                 Option1Button.Content = currentRoom.Options[0];
                 Option2Button.Content = currentRoom.Options[1];
-                StatusText.Text = $"Жизни: {game.Lives} | Подсказки: {game.Hints} | Тугрики: {game.Tugriks}";
+                StatusText.Text = $"Жизни: {game.Lives} | Подсказки: {game.Hints} | Тугрики: {game.Tugriks} | Уровень {game.CurrentRoomIndex+1}/{game.Rooms.Count+1}";
             }
             else
             {
@@ -39,32 +40,31 @@ namespace PuzzleLabyrinth
 
             if (currentRoom.CheckAnswer(choice))
             {
-                MessageBox.Show("Правильно!");
-                game.MoveToNextRoom();
-                if (game.IsGameWon())
-                {
-                    MessageBox.Show("Поздравляем, вы выиграли!");
-                    this.Close();
-                }
-                else
-                {
-                    UpdateUI();
-                }
+                game.AddTugriks(3);
+                LastRound.Text = "Правильно! +3 тугрика!";
             }
             else
             {
                 game.LoseLife();
                 if (game.IsGameOver())
                 {
-                    MessageBox.Show("Игра окончена!");
+                    MessageBox.Show("Игра окончена!");//ДАДЕЛАЦ
                     this.Close();
                 }
                 else
                 {
-                    MessageBox.Show("Неправильно!");
+                    LastRound.Text = "Неправильно! -1 жизнь(";
                     UpdateUI();
                 }
             }
+            game.MoveToNextRoom();
+            if (game.IsGameWon())
+            {
+                MessageBox.Show("Поздравляем, вы выиграли!");
+                this.Close();
+            }
+            else UpdateUI();
+
         }
 
         private void HintButton_Click(object sender, RoutedEventArgs e)
@@ -81,7 +81,7 @@ namespace PuzzleLabyrinth
                 MessageBox.Show("У вас нет подсказок!");
             }
         }
-        private void OpenShopWindow()
+        public void OpenShopWindow()
         {
             var shopWindow = new ShopWindow(game);
             shopWindow.WindowStartupLocation = WindowStartupLocation.CenterScreen;

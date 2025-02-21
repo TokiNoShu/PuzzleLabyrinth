@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using System.Windows;
+using System.Windows.Controls;
 
 namespace PuzzleLabyrinth.Utils
 {
@@ -9,6 +11,7 @@ namespace PuzzleLabyrinth.Utils
         public int Lives { get; set; }
         public int Hints { get; set; }
         public int Tugriks { get; set; }
+        public int RightAnswers;
 
         public Game(string theme)
         {
@@ -17,6 +20,7 @@ namespace PuzzleLabyrinth.Utils
             Lives = 3;
             Hints = 2;
             Tugriks = 0;
+            RightAnswers = 0;
         }
 
         private List<Room> GetRoomsByTheme(string theme)
@@ -47,6 +51,10 @@ namespace PuzzleLabyrinth.Utils
             {
                 CurrentRoomIndex++;
             }
+            else if (CurrentRoomIndex == 4)
+            {
+                
+            }
         }
 
         public void UseHint()
@@ -59,6 +67,7 @@ namespace PuzzleLabyrinth.Utils
 
         public void AddTugriks(int amount)
         {
+            RightAnswers += 1;
             Tugriks += amount;
         }
 
@@ -79,6 +88,7 @@ namespace PuzzleLabyrinth.Utils
 
         public bool IsGameWon()
         {
+            MessageBox.Show("");
             return CurrentRoomIndex == Rooms.Count - 1;
         }
 

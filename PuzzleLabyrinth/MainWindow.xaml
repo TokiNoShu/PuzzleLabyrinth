@@ -6,11 +6,12 @@
     <Grid>
         <TextBlock x:Name="QuestionText" Margin="10" FontSize="16"/>
 
-        <Button x:Name="Option1Button" Content="Вариант 1" Margin="10,50,10,100" Click="OptionButton_Click" FontSize="20"/>
-        <Button x:Name="Option2Button" Content="Вариант 2" Margin="10,100,10,100" Click="OptionButton_Click" FontSize="20"/>
+        <Button x:Name="Option1Button" Margin="10,50,10,234" Click="OptionButton_Click" FontSize="20"/>
+        <Button x:Name="Option2Button" Margin="10,100,10,184" Click="OptionButton_Click" FontSize="20"/>
 
         <Button x:Name="HintButton" Content="Подсказка" Margin="10,150,10,100" Click="HintButton_Click" FontSize="20"/>
-
-        <TextBlock x:Name="StatusText" Margin="10,239,10,10" FontSize="20"/>
+    
+        <TextBlock x:Name="StatusText" Margin="10,279,10,0" FontSize="20"/>
+        <TextBlock x:Name="LastRound" Margin="0,234,0,41" FontSize="15" HorizontalAlignment="Center"/>
     </Grid>
 </Window>
