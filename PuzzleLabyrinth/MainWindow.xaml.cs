@@ -1,19 +1,19 @@
-﻿using System;
+﻿using PuzzleLabyrinth.Utils;
 using System.Windows;
 using System.Windows.Controls;
-using PuzzleLabyrinth.Utils;
 
 namespace PuzzleLabyrinth
 {
     public partial class MainWindow : Window
     {
         private Game game;
-
+        public int RightAnswers;
         public MainWindow(string theme)
         {
             InitializeComponent();
             game = new Game(theme);
             UpdateUI();
+            RightAnswers = 0;
         }
 
         private void UpdateUI()
@@ -42,13 +42,14 @@ namespace PuzzleLabyrinth
             {
                 game.AddTugriks(3);
                 LastRound.Text = "Правильно! +3 тугрика!";
+                RightAnswers += 1;
             }
             else
             {
                 game.LoseLife();
                 if (game.IsGameOver())
                 {
-                    MessageBox.Show("Игра окончена!");//ДАДЕЛАЦ
+                    MessageBox.Show("Какой же ты дегенерат тупорылый, просто тупой олух, лучше убейся и попроси у мамы прощения за то, что ты родился. Не включай комп больше, идиот.");
                     this.Close();
                 }
                 else
@@ -60,7 +61,7 @@ namespace PuzzleLabyrinth
             game.MoveToNextRoom();
             if (game.IsGameWon())
             {
-                MessageBox.Show("Поздравляем, вы выиграли!");
+                MessageBox.Show("Поздравляем, вы выиграли! Молодец! Я твой член сосал!");
                 this.Close();
             }
             else UpdateUI();

@@ -11,7 +11,6 @@ namespace PuzzleLabyrinth.Utils
         public int Lives { get; set; }
         public int Hints { get; set; }
         public int Tugriks { get; set; }
-        public int RightAnswers;
 
         public Game(string theme)
         {
@@ -20,7 +19,6 @@ namespace PuzzleLabyrinth.Utils
             Lives = 3;
             Hints = 2;
             Tugriks = 0;
-            RightAnswers = 0;
         }
 
         private List<Room> GetRoomsByTheme(string theme)
@@ -119,7 +117,6 @@ namespace PuzzleLabyrinth.Utils
 
         public void AddTugriks(int amount)
         {
-            RightAnswers += 1;
             Tugriks += amount;
         }
 
