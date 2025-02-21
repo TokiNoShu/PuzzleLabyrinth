@@ -88,7 +88,6 @@ namespace PuzzleLabyrinth.Utils
 
         public bool IsGameWon()
         {
-            MessageBox.Show("");
             return CurrentRoomIndex == Rooms.Count - 1;
         }
 
