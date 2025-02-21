@@ -1,0 +1,13 @@
+﻿<Window x:Class="PuzzleLabyrinth.Utils.ThemeSelectionWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Выбор тематики" Height="200" Width="300"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <ComboBox x:Name="ThemeComboBox" Margin="10" VerticalAlignment="Top">
+            <ComboBoxItem>Загадки</ComboBoxItem>
+            <ComboBoxItem>Фильмы</ComboBoxItem>
+        </ComboBox>
+        <Button Content="Начать игру" Margin="10,50,10,10" Click="StartButton_Click"/>
+    </Grid>
+</Window>
