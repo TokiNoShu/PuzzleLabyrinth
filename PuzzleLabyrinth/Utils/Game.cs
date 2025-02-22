@@ -87,7 +87,8 @@ namespace PuzzleLabyrinth.Utils
                 case "Игры":
                     return new List<Room>
                     {
-                        new Room("Самая продаваемая игра в мире?", "Tetris", "Minecraft", "Tetris")
+                        new Room("Самая продаваемая игра в мире?", "Tetris", "Minecraft", "Tetris"),
+                        new Room("","","","")
                     };
                 case "Дота":
                     return new List<Room>
@@ -122,6 +123,7 @@ namespace PuzzleLabyrinth.Utils
                 new Room("Существа, которые создаются героями для помощи в битве.", "Крипы", "Саммоны", "Саммоны"),
                 new Room("Фраза Legion Commander 'War... War always changes' относит нас к одной игре, к какой?", "Фоллаут", "World of Warcraft", "Фоллаут"),
                 new Room("Время спавна рошана", "7-11 минут", "8-12 минут", "7-11 минут"),
+                new Room("","","","")
             };
                 default:
                     return new List<Room>();
