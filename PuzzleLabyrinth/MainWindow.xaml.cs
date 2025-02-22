@@ -56,7 +56,7 @@ namespace PuzzleLabyrinth
                 QuestionText.Text = currentRoom.Question;
                 Option1Button.Content = currentRoom.Options[0];
                 Option2Button.Content = currentRoom.Options[1];
-                StatusText.Text = $"Жизни: {game.Lives} | Подсказки: {game.Hints} | Тугрики: {game.Tugriks} | Уровень {game.CurrentRoomIndex+1}/{game.Rooms.Count}";
+                StatusText.Text = $"Жизни: {game.Lives} | Подсказки: {game.Hints} | Тугрики: {game.Tugriks} | Уровень {game.CurrentRoomIndex+1}/{game.Rooms.Count - 1}";
             }
             else
             {

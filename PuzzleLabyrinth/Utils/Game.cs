@@ -179,7 +179,7 @@ namespace PuzzleLabyrinth.Utils
 
         public bool IsShopRoom()
         {
-            return (CurrentRoomIndex + 1) % 6 == 0;
+            return (CurrentRoomIndex + 1) % 6 == 0 && (CurrentRoomIndex + 1) != 30;
         }
     }
 }
