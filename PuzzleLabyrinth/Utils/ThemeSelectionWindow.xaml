@@ -7,6 +7,7 @@
         <ComboBox x:Name="ThemeComboBox" Margin="10" VerticalAlignment="Top">
             <ComboBoxItem>Загадки</ComboBoxItem>
             <ComboBoxItem>Фильмы</ComboBoxItem>
+            <ComboBoxItem>Дота</ComboBoxItem>
         </ComboBox>
         <Button Content="Начать игру" Margin="10,50,10,10" Click="StartButton_Click"/>
     </Grid>

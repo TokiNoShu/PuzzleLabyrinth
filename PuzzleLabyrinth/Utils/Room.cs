@@ -9,12 +9,12 @@ namespace PuzzleLabyrinth.Utils
         public string CorrectAnswer { get; }
         public string Hint { get; }
 
-        public Room(string question, string option1, string option2)
+        public Room(string question, string option1, string option2, string rightOption)
         {
             Question = question;
             Options = new List<string>() { option1, option2 };
-            CorrectAnswer = option1;
-            Hint = $"Подсказка: правильный ответ - это {option1.Length} букв.";
+            CorrectAnswer = rightOption;
+            Hint = $"Подсказка: правильный ответ - это {rightOption.Length} букв.";
         }
 
         public bool CheckAnswer(string choice)
