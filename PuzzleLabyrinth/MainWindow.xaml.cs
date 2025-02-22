@@ -33,6 +33,16 @@ namespace PuzzleLabyrinth
                 case "Загадки":
                     imagePath = "Images/riddler.jpg";
                     break;
+                case "Фильмы":
+                    imagePath = "Images/Cinema.jpg";
+                    break;
+                case "Мультики":
+                    imagePath = "Images/mult.jpg";
+                    break;
+                case "Игры":
+                    imagePath = "Images/game.jpg";
+                    break;
+
             }
             ImageBrush backgroundBrush = (ImageBrush)this.Resources["BackgroundBrush"];
             backgroundBrush.ImageSource = new BitmapImage(new Uri(imagePath, UriKind.Relative));
