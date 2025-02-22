@@ -1,21 +1,22 @@
 ﻿<Window x:Class="PuzzleLabyrinth.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Логический лабиринт" Height="450" Width="700"
+        Title="Логический лабиринт" Height="450" Width="900"
         WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
         Loaded="Window_Loaded">
     <Window.Resources>
         <ImageBrush x:Key="BackgroundBrush" Stretch="UniformToFill"/>
     </Window.Resources>
     <Grid Background="{StaticResource BackgroundBrush}">
-        <TextBlock x:Name="QuestionText" Margin="10,10,72,379" FontSize="16" Background="White"/>
-        <TextBlock x:Name="Timer" Margin="646,0,0,389" FontSize="14" Background="White"/>
-        <Button x:Name="Option1Button" Margin="10,50,10,324" Click="OptionButton_Click" FontSize="20" Width="450"/>
-        <Button x:Name="Option2Button" Margin="10,100,10,274" Click="OptionButton_Click" FontSize="20" Width="450"/>
+        <TextBlock x:Name="QuestionText" Margin="0,0,0,379" FontSize="20" Background="White" TextAlignment="Center"/>
+        <TextBlock x:Name="Timer" Margin="831,366,0,0" FontSize="20" Background="White" TextAlignment="Center"/>
+        <Button x:Name="Option1Button" Margin="125,60,125,314" Click="OptionButton_Click" FontSize="20"/>
+        <Button x:Name="Option2Button" Margin="125,125,125,249" Click="OptionButton_Click" FontSize="20"/>
 
-        <Button x:Name="HintButton" Content="Подсказка" Margin="10,150,10,184" Click="HintButton_Click" FontSize="20" Width="150" Height="50"/>
+        <Button x:Name="HintButton" Content="Подсказка" Margin="125,185,125,169" Click="HintButton_Click" FontSize="20"/>
 
-        <TextBlock x:Name="StatusText" Margin="0,366,20,0" FontSize="20" Background="White"/>
-        <TextBlock x:Name="LastRound" Margin="0,255,0,120" FontSize="15" HorizontalAlignment="Center" Background="White"/>
+        <TextBlock x:Name="StatusText" Margin="0,366,53,0" FontSize="20" Background="White" TextAlignment="Center"/>
+        <TextBlock x:Name="LastRound" Margin="0,255,0,120" FontSize="15" HorizontalAlignment="Center" Background="White" TextAlignment="Center"/>
     </Grid>
 </Window>

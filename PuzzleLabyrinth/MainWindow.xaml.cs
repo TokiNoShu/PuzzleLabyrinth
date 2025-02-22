@@ -73,7 +73,7 @@ namespace PuzzleLabyrinth
             if (currentRoom.CheckAnswer(choice))
             {
                 game.AddTugriks(5);
-                LastRound.Text = "Правильно! +5 тугриков!";
+                LastRound.Text = "     Правильно! +5 тугриков!     ";
                 RightAnswers += 1;
             }
             else
@@ -82,19 +82,19 @@ namespace PuzzleLabyrinth
                 if (game.IsGameOver())
                 {
                     timer.Stop();
-                    MessageBox.Show("Какой же ты дегенерат тупорылый, просто тупой олух, лучше убейся и попроси у мамы прощения за то, что ты родился. Не включай комп больше, идиот.");
+                    MessageBox.Show("Ты ботик");
                     this.Close();
                 }
                 else
                 {
-                    LastRound.Text = "Неправильно! -1 жизнь(";
+                    LastRound.Text = "     Неправильно! -1 жизнь     ";
                     UpdateUI();
                 }
             }
             game.MoveToNextRoom();
             if (game.IsGameWon())
             {
-                MessageBox.Show("Поздравляем, вы выиграли! Молодец! Я твой член сосал!");
+                MessageBox.Show("Поздравляем, вы выиграли! Молодец!");
                 this.Close();
             }
             else UpdateUI();

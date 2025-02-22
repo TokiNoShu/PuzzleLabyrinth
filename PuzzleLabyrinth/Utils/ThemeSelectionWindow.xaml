@@ -4,13 +4,13 @@
         Title="Выбор тематики" Height="200" Width="300"
         WindowStartupLocation="CenterScreen">
     <Grid>
-        <ComboBox x:Name="ThemeComboBox" Margin="10" VerticalAlignment="Top">
+        <ComboBox x:Name="ThemeComboBox" Margin="10" VerticalAlignment="Top" FontSize="20">
             <ComboBoxItem>Загадки</ComboBoxItem>
             <ComboBoxItem>Фильмы</ComboBoxItem>
             <ComboBoxItem>Дота</ComboBoxItem>
             <ComboBoxItem>Мультики</ComboBoxItem>
             <ComboBoxItem>Игры</ComboBoxItem>
         </ComboBox>
-        <Button Content="Начать игру" Margin="10,50,10,10" Click="StartButton_Click"/>
+        <Button Content="Начать игру" Margin="10,50,10,10" Click="StartButton_Click" FontSize="20"/>
     </Grid>
 </Window>

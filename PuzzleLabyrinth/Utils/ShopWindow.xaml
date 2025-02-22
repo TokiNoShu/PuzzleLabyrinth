@@ -1,14 +1,13 @@
 ﻿<Window x:Class="PuzzleLabyrinth.Utils.ShopWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Магазин" Height="300" Width="400"
+        Title="Магазин" Height="400" Width="400"
         WindowStartupLocation="CenterScreen">
-    <!-- Центрируем окно -->
     <Grid>
-        <TextBlock x:Name="ShopText" Margin="10" FontSize="16" Text="Добро пожаловать в магазин!"/>
-        <Button x:Name="BuyHintButton" Content="Купить подсказку (10 тугриков)" Margin="10,50,10,184" Click="BuyHintButton_Click"/>
-        <Button x:Name="BuyLifeButton" Content="Купить жизнь (20 тугриков)" Margin="10,100,10,134" Click="BuyLifeButton_Click"/>
-        <Button x:Name="ExitButton" Content="Выйти" Margin="10,150,10,10" Click="ExitButton_Click"/>
-        <TextBlock x:Name="CurrencyText" Margin="10,200,10,10" FontSize="14"/>
+        <TextBlock x:Name="ShopText" Margin="10" FontSize="20" Text="Добро пожаловать в магазин!" TextAlignment="Center"/>
+        <Button x:Name="BuyHintButton" Content="Купить подсказку (10 тугриков)" Margin="10,53,10,271" Click="BuyHintButton_Click" FontSize="20"/>
+        <Button x:Name="BuyLifeButton" Content="Купить жизнь (20 тугриков)" Margin="10,113,10,211" Click="BuyLifeButton_Click" FontSize="20"/>
+        <Button x:Name="ExitButton" Content="Выйти" Margin="10,173,10,82" Click="ExitButton_Click" FontSize="20"/>
+        <TextBlock x:Name="CurrencyText" Margin="10,302,10,10" FontSize="20" TextAlignment="Center"/>
     </Grid>
 </Window>
