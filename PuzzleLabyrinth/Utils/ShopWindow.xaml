@@ -6,8 +6,8 @@
     <!-- Центрируем окно -->
     <Grid>
         <TextBlock x:Name="ShopText" Margin="10" FontSize="16" Text="Добро пожаловать в магазин!"/>
-        <Button x:Name="BuyHintButton" Content="Купить подсказку (10 тугриков)" Margin="10,50,10,10" Click="BuyHintButton_Click"/>
-        <Button x:Name="BuyLifeButton" Content="Купить жизнь (20 тугриков)" Margin="10,100,10,10" Click="BuyLifeButton_Click"/>
+        <Button x:Name="BuyHintButton" Content="Купить подсказку (10 тугриков)" Margin="10,50,10,184" Click="BuyHintButton_Click"/>
+        <Button x:Name="BuyLifeButton" Content="Купить жизнь (20 тугриков)" Margin="10,100,10,134" Click="BuyLifeButton_Click"/>
         <Button x:Name="ExitButton" Content="Выйти" Margin="10,150,10,10" Click="ExitButton_Click"/>
         <TextBlock x:Name="CurrencyText" Margin="10,200,10,10" FontSize="14"/>
     </Grid>

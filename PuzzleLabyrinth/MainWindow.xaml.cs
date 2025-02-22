@@ -1,19 +1,41 @@
 ﻿using PuzzleLabyrinth.Utils;
+using System;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media.Imaging;
+using System.Windows.Media;
+using System.Windows.Threading;
 
 namespace PuzzleLabyrinth
 {
     public partial class MainWindow : Window
     {
+        private DispatcherTimer timer;
         private Game game;
         public int RightAnswers;
+        public TimeSpan RemainingTime { get; set; }
         public MainWindow(string theme)
         {
             InitializeComponent();
             game = new Game(theme);
             UpdateUI();
             RightAnswers = 0;
+            timer = new DispatcherTimer();
+            timer.Interval = TimeSpan.FromSeconds(1);
+            timer.Tick += Timer_Tick;
+            RemainingTime = TimeSpan.FromMinutes(15);
+            string imagePath = "";
+            switch (theme)
+            {
+                case "Дота":
+                    imagePath = "Images/dota.webp";
+                    break;
+                case "Загадки":
+                    imagePath = "Images/riddler.jpg";
+                    break;
+            }
+            ImageBrush backgroundBrush = (ImageBrush)this.Resources["BackgroundBrush"];
+            backgroundBrush.ImageSource = new BitmapImage(new Uri(imagePath, UriKind.Relative));
         }
 
         private void UpdateUI()
@@ -40,8 +62,8 @@ namespace PuzzleLabyrinth
 
             if (currentRoom.CheckAnswer(choice))
             {
-                game.AddTugriks(3);
-                LastRound.Text = "Правильно! +3 тугрика!";
+                game.AddTugriks(5);
+                LastRound.Text = "Правильно! +5 тугриков!";
                 RightAnswers += 1;
             }
             else
@@ -49,6 +71,7 @@ namespace PuzzleLabyrinth
                 game.LoseLife();
                 if (game.IsGameOver())
                 {
+                    timer.Stop();
                     MessageBox.Show("Какой же ты дегенерат тупорылый, просто тупой олух, лучше убейся и попроси у мамы прощения за то, что ты родился. Не включай комп больше, идиот.");
                     this.Close();
                 }
@@ -65,6 +88,10 @@ namespace PuzzleLabyrinth
                 this.Close();
             }
             else UpdateUI();
+            if (game.IsShopRoom())
+            {
+                OpenShopWindow();
+            }
 
         }
 
@@ -87,6 +114,25 @@ namespace PuzzleLabyrinth
             var shopWindow = new ShopWindow(game);
             shopWindow.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             shopWindow.ShowDialog();
+        }
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            RemainingTime -= timer.Interval;
+            Timer.Text = RemainingTime.ToString(@"mm\:ss");
+            if (RemainingTime <= TimeSpan.Zero)
+            {
+                timer.Stop();
+                MessageBox.Show("Какой же ты дегенерат тупорылый, просто тупой олух, лучше убейся и попроси у мамы прощения за то, что ты родился. Не включай комп больше, идиот.");
+                this.Close();
+            }
+        }
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            timer.Start();
+        }
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            timer.Stop();
         }
     }
 }
