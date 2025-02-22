@@ -19,18 +19,18 @@ namespace PuzzleLabyrinth.Utils
             CurrencyText.Text = $"Ваши тугрики: {game.Tugriks}";
         }
 
-        private void BuyHintButton_Click(object sender, RoutedEventArgs e)
+        private void BuySkipButton_Click(object sender, RoutedEventArgs e)
         {
-            if (game.Tugriks >= 10 && game.Hints < 5)
+            if (game.Tugriks >= 40 && game.Skips < 5)
             {
-                game.Hints++;
-                game.Tugriks -= 10;
-                MessageBox.Show("Подсказка куплена!");
+                game.Skips++;
+                game.Tugriks -= 40;
+                MessageBox.Show("Пропуск куплен!");
                 UpdateUI();
             }
             else
             {
-                MessageBox.Show("Недостаточно тугриков или достигнуто максимальное количество подсказок.");
+                MessageBox.Show("Недостаточно тугриков или достигнуто максимальное количество пропусков.");
             }
         }
 

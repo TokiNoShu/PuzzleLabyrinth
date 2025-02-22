@@ -14,7 +14,7 @@
         <Button x:Name="Option1Button" Margin="125,60,125,314" Click="OptionButton_Click" FontSize="20"/>
         <Button x:Name="Option2Button" Margin="125,125,125,249" Click="OptionButton_Click" FontSize="20"/>
 
-        <Button x:Name="HintButton" Content="Подсказка" Margin="125,185,125,169" Click="HintButton_Click" FontSize="20"/>
+        <Button x:Name="SkipButton" Content="Пропустить вопрос" Margin="125,185,125,169" Click="SkipButton_Click" FontSize="20"/>
 
         <TextBlock x:Name="StatusText" Margin="0,366,53,0" FontSize="20" Background="White" TextAlignment="Center"/>
         <TextBlock x:Name="LastRound" Margin="0,255,0,120" FontSize="15" HorizontalAlignment="Center" Background="White" TextAlignment="Center"/>

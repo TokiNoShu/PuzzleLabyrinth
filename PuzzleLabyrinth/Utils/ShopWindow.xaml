@@ -5,7 +5,7 @@
         WindowStartupLocation="CenterScreen">
     <Grid>
         <TextBlock x:Name="ShopText" Margin="10" FontSize="20" Text="Добро пожаловать в магазин!" TextAlignment="Center"/>
-        <Button x:Name="BuyHintButton" Content="Купить подсказку (10 тугриков)" Margin="10,53,10,271" Click="BuyHintButton_Click" FontSize="20"/>
+        <Button x:Name="BuySkipButton" Content="Купить пропуск комнаты (40 тугриков)" Margin="10,53,10,271" Click="BuySkipButton_Click" FontSize="20"/>
         <Button x:Name="BuyLifeButton" Content="Купить жизнь (20 тугриков)" Margin="10,113,10,211" Click="BuyLifeButton_Click" FontSize="20"/>
         <Button x:Name="ExitButton" Content="Выйти" Margin="10,173,10,82" Click="ExitButton_Click" FontSize="20"/>
         <TextBlock x:Name="CurrencyText" Margin="10,302,10,10" FontSize="20" TextAlignment="Center"/>
